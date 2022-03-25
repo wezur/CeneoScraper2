@@ -131,3 +131,5 @@ dmypy.json
 # IDE
 .vscode
 .python-version
+
+*.DS_STORE

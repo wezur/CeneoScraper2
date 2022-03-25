@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table id="data">
+  <thead>
+    <tr>
+      <th>Nazwa produktu</th>
+      <th>Liczba opinii</th>
+      <th>Liczba zalet</th>
+      <th>Liczba wad</th>
+      <th>Średnia ocen</th>
+      <th>Pobierz dane</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %}
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.reviewsCount }}</td>
+        <td>{{ product.prosCount }}</td>
+        <td>{{ product.consCount }}</td>
+        <td>{{ product.averageStarCount }}/5</td>
+        <td>download</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

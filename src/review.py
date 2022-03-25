@@ -1,11 +1,13 @@
+from datetime import datetime
+
 class Review:
 	def __init__(self, reviewHtml):
 		self.reviewId = reviewHtml['data-entry-id']
 		self.author = reviewHtml.select('span.user-post__author-name')[0].text
 		self.recommendation = reviewHtml.select('span.user-post__author-recomendation > em')[0].text if len(reviewHtml.select('span.user-post__author-recomendation > em')) > 0 else None
 		self.starCount = reviewHtml.select('span.user-post__score-count')[0].text if len(reviewHtml.select('span.user-post__score-count')) > 0 else None
-		self.reviewDate = reviewHtml.select('span.user-post__published > time[datetime]:nth-child(1)')[0]['datetime'] if len(reviewHtml.select('span.user-post__published > time[datetime]:nth-child(1)')) > 0 else None
-		self.purchaseDate = reviewHtml.select('span.user-post__published > time[datetime]:nth-child(2)')[0]['datetime'] if len(reviewHtml.select('span.user-post__published > time[datetime]:nth-child(2)')) > 0 else None
+		self.reviewDate = datetime.strptime(reviewHtml.select('span.user-post__published > time[datetime]:nth-child(1)')[0]['datetime'], '%Y-%m-%d %X').strftime("%Y-%m-%d") if len(reviewHtml.select('span.user-post__published > time[datetime]:nth-child(1)')) > 0 else None
+		self.purchaseDate = datetime.strptime(reviewHtml.select('span.user-post__published > time[datetime]:nth-child(2)')[0]['datetime'], '%Y-%m-%d %X').strftime("%Y-%m-%d") if len(reviewHtml.select('span.user-post__published > time[datetime]:nth-child(2)')) > 0 else None
 		self.voteYesCount = reviewHtml.select('span[id^=votes-yes]')[0].text
 		self.voteNoCount = reviewHtml.select('span[id^=votes-no]')[0].text
 		self.content = reviewHtml.select('div.user-post__text')[0].text	if len(reviewHtml.select('div.user-post__text')) > 0 else None

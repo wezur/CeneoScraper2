@@ -15,15 +15,16 @@
 		<div class="nav">
 			<ol>
 				<li><a href="/extract/">Ekstracja opinii</a></li>
-				<li><a href="#">Lista produktów</a></li>
+				<li><a href="/product/list/">Lista produktów</a></li>
 				<li><a href="/">Strona główna</a></li>
-				<li><a href="#">O autorze</a></li>
+				<li><a href="/about/">O autorze</a></li>
 			</ol>
 		</div>
 	</header>
+	<h1 class="title">{{ title }}	{% block additional %}{% endblock %}</h1>
+
+	<hr>
 	<div class="container">
-		<h1>{{ title }}</h1>
-		<hr>
 		{% block content %}{% endblock %}
 	</div>
 </body>

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<label>Wprowadź ID produktu, którego opinie chcesz wyekstraktować:</label><br>
+<div class="extract">
+	<label>Wprowadź ID produktu, którego opinie chcesz wyekstraktować:</label><br><br>
 	<input type="text", id="productID">
 	<button type="button" onclick="window.location.href = `/product/${document.getElementById('productID').value}/`">Ekstracja</button>
+</div>
 {% endblock %}

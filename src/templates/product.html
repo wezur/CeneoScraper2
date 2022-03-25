@@ -1,5 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
+<table id="data">
+  <thead>
+    <tr>
+      <th>ID Opinii</th>
+      <th>Autor</th>
+      <th>Rekomendacja</th>
+      <th>Ocena</th>
+      <th>Data opinii</th>
+      <th>Data zakupu</th>
+      <th>+</th>
+      <th>-</th>
+      <th>Treść opinii</th>
+      <th>Zalety</th>
+      <th>Wady</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for review in reviews %}
+      <tr>
+        <td>{{ review.reviewId }}</td>
+        <td>{{ review.author }}</td>
+        <td>{{ review.recommendation }}</td>
+        <td>{{ review.starCount }}</td>
+        <td>{{ review.reviewDate }}</td>
+        <td>{{ review.purchaseDate }}</td>
+        <td>{{ review.voteYesCount }}</td>
+        <td>{{ review.voteNoCount }}</td>
+        <td>{{ review.content }}</td>
+        <td>
+          <ul>
+            {% for pros in review.pros %}
+            <li>{{ pros }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for cons in review.cons %}
+            <li>{{ cons }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
 
+{% block additional %}
 {% endblock %}

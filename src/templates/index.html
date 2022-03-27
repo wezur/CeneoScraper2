@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique nisi eu finibus sodales. Quisque fringilla lectus a velit vulputate, congue dignissim risus malesuada. Cras pulvinar, libero vitae porttitor elementum, nunc nibh finibus lectus, eget posuere odio quam sed magna. Ut semper tempor imperdiet. Cras euismod feugiat metus et ultrices. Sed lacinia nibh sed justo sagittis, posuere finibus sapien tincidunt. In posuere interdum nibh, consectetur vehicula nisi finibus eu. Morbi ex diam, tincidunt id ligula sed, commodo vulputate lacus. Duis molestie pellentesque cursus. Donec elit risus, hendrerit non ante eu, ornare sagittis eros. Suspendisse ac tincidunt nisl. Pellentesque aliquam at metus in egestas. Donec ut ornare ligula. Curabitur sit amet nunc eget enim molestie dapibus.
+<h3 style="padding: 15px 0 0 15px">Cel aplikacji</h3>
+	<span style="padding-left: 15px">Aplikacja ma na celu zebranie opinii danego produktu z serwisu <a href="https://Ceneo.pl">Ceneo</a> oraz zaprezentować te dane w tabelce oraz za pomocą wykresów. Umożliwia także pobranie tych danych w plikach .json, .csv oraz .xlsx.</span><br><br>
+<h3 style="padding-left: 15px">Opis działania aplikacji</h3>
+	<span style="padding-left: 15px">Aplikacje wysyła żadanie GET do serwisu Ceneo i wykorzystując biblioteke BeautifulSoup wyszukuje odpowiednich znacznikow CSS na stronie. Następnie tworzony jest obiekt klasy Product oraz Review który następnie jest wykorzystywany do prezentowania oraz tworzenia plików do pobrania.</span><br><br>
+<h3 style="padding-left: 15px">Zastosowane biblioteki</h3>
+	<span>
+		<ul style="padding-left: 30px">
+			<li>pandas</li>
+			<li>BeautifulSoup</li>
+			<li>Flask</li>
+			<li>jsonpickle</li>
+			<li>openpyxl</li>
+			<li>matplotlib</li>
+			<li>jsons</li>
+		</ul>
+	</span>
 {% endblock %}

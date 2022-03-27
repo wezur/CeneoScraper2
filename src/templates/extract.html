@@ -4,6 +4,9 @@
 <div class="extract">
 	<label>Wprowadź ID produktu, którego opinie chcesz wyekstraktować:</label><br><br>
 	<input type="text", id="productID">
-	<button type="button" onclick="window.location.href = `/product/${document.getElementById('productID').value}/`">Ekstracja</button>
+	<button class ='button' type="button" onclick="window.location.href = `/product/${document.getElementById('productID').value}/`">Ekstracja</button>
+	{% if error %}
+	<br><br><b>Nie znaleziono takiego produktu!</b>
+	{% endif %}
 </div>
 {% endblock %}

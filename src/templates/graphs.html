@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center">
+	<img src='data:image/png;base64,{{ graph1 }}'/>
+	<img src='data:image/png;base64,{{ graph2 }}'/>
+</div>
+{% endblock %}
+
+{% block additional %}
+
+<button class='button' style="
+float: right;
+margin-top: -10px;
+" onclick="history.back()">Powrót</button>
+
+{% endblock %}

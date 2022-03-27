@@ -24,5 +24,5 @@ def scrapReviews(productID):
 def scrapProduct(productID, reviews):
 	request = requests.get(f'https://www.ceneo.pl/{productID}')
 	soup = BeautifulSoup(request.text, 'html.parser')
-	product = Product(soup, f'https://www.ceneo.pl/{productID}', reviews)
+	product = Product(productID, soup, f'https://www.ceneo.pl/{productID}', reviews)
 	return product

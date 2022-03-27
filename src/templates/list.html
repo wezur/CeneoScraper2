@@ -15,14 +15,25 @@
   <tbody>
     {% for product in products %}
       <tr>
-        <td>{{ product.name }}</td>
+        <td><a href = '/product/{{ product.productID }}/'>{{ product.name }}</a></td>
         <td>{{ product.reviewsCount }}</td>
         <td>{{ product.prosCount }}</td>
         <td>{{ product.consCount }}</td>
         <td>{{ product.averageStarCount }}/5</td>
-        <td>download</td>
+        <td><a href = '/product/{{ product.productID }}/download/json/'>Pobierz(.json)</a></td>
       </tr>
     {% endfor %}
   </tbody>
 </table>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#data').DataTable({
+      'language': {
+            'url': '//cdn.datatables.net/plug-ins/1.11.5/i18n/pl.json'
+        }
+    });
+  });
+
+</script>
+
 {% endblock %}
